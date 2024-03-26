@@ -4,10 +4,15 @@
 
 ESPHome Zigbee sensor connected to [AHT10 Temperature+Humidity Sensor](https://next.esphome.io/components/sensor/aht10).
 
+### Development Environment
+
+* Check ESPHome tutorials:
+  * [Setting Up Development Environment](https://esphome.io/guides/contributing#setting-up-development-environment)
+  * [Command Line Interface](https://esphome.io/guides/cli#run-command)
+
 ### Build ESPHome Zigbee sensor
 
-* We will build [ZB_sensor.yaml](ZB_sensor.yaml) file.
-* Check [Getting Started with the ESPHome Command Line](https://esphome.io/guides/getting_started_command_line.html) tutorial to setup your dev environment.
+We will build [ZB_sensor.yaml](ZB_sensor.yaml) file.
 
 **Steps**
 * Build with `esphome run ZB_sensor.yaml` command will fail. 
