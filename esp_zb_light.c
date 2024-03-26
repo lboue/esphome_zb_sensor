@@ -35,6 +35,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#define ZB_TRACE_FILE_ID 1 // Workaround for ZB_TRACE_FILE_ID warning
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_check.h"
