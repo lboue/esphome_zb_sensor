@@ -28,8 +28,8 @@ logger:
   hardware_uart: UART0
     
 i2c:
-  sda: 12
-  scl: 22
+  sda: 6  # LP_I2C_SDA
+  scl: 7  # LP_I2C_SCL
 
 sensor:
   - platform: aht10
