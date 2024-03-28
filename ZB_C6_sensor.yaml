@@ -8,6 +8,7 @@ esphome:
     - esp_zb_light.h
     
 esp32:
+  # ESP32-C6-DevKitC-1-N8
   board: esp32-c6-devkitc-1
   flash_size: 8MB
   partitions: partitions_zb.csv
