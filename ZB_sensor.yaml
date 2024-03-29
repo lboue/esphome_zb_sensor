@@ -31,28 +31,37 @@ i2c:
   scl: 22
 
 sensor:
-  - platform: aht10
-    variant: AHT10
+    # BME680 Temperature+Pressure+Humidity+Gas Sensor
+  - platform: bme680
     temperature:
-      name: "Living Room Temperature"
-      id: "temp"
+      id: "temperature"    
+      name: "BME680 Temperature"
+      oversampling: 16x
       filters:
         - delta: 0.1
       on_value:
         then:
           - lambda: |-
                 int16_t value = (int16_t)(x*100);
-                reportAttribute(ESP_ZB_ZCL_CLUSTER_ID_TEMP_MEASUREMENT, ESP_ZB_ZCL_ATTR_TEMP_MEASUREMENT_VALUE_ID, &value);
+                reportAttribute(ESP_ZB_ZCL_CLUSTER_ID_TEMP_MEASUREMENT, ESP_ZB_ZCL_ATTR_TEMP_MEASUREMENT_VALUE_ID, &value);      
+    pressure:
+      id: pressure
+      name: "BME680 Pressure"
+      
     humidity:
-      name: "Living Room Humidity"
-      id: "hum"
-      filters:
+      id: humidity
+      name: "BME680 Humidity"      filters:
         - delta: 1
       on_value:
         then:
           - lambda: |-
                 int16_t value = (int16_t)(x*100);
                 reportAttribute(ESP_ZB_ZCL_CLUSTER_ID_REL_HUMIDITY_MEASUREMENT, ESP_ZB_ZCL_ATTR_REL_HUMIDITY_MEASUREMENT_VALUE_ID, &value);
+                
+    gas_resistance:
+      id: gas_resistance
+      name: "BME680 Gas Resistance"
+    address: 0x77
     update_interval: 60s
 
 custom_component:
