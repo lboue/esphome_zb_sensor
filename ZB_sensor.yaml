@@ -50,14 +50,15 @@ sensor:
       
     humidity:
       id: humidity
-      name: "BME680 Humidity"      filters:
+      name: "BME680 Humidity"
+      filters:
         - delta: 1
       on_value:
         then:
           - lambda: |-
                 int16_t value = (int16_t)(x*100);
                 reportAttribute(ESP_ZB_ZCL_CLUSTER_ID_REL_HUMIDITY_MEASUREMENT, ESP_ZB_ZCL_ATTR_REL_HUMIDITY_MEASUREMENT_VALUE_ID, &value);
-                
+
     gas_resistance:
       id: gas_resistance
       name: "BME680 Gas Resistance"
