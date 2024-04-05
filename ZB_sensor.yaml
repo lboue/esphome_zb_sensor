@@ -32,7 +32,7 @@ i2c:
 
 sensor:
   - platform: aht10
-    variant: AHT10
+    variant: AHT20
     temperature:
       name: "Living Room Temperature"
       id: "temp"
