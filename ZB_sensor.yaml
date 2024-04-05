@@ -27,14 +27,14 @@ logger:
   hardware_uart: UART0
     
 i2c:
-  sda: 12
-  scl: 22
+  sda: 5
+  scl: 4
 
 sensor:
   - platform: aht10
     variant: AHT20
     temperature:
-      name: "Living Room Temperature"
+      name: "AHT20 Temperature"
       id: "temp"
       filters:
         - delta: 0.1
@@ -44,7 +44,7 @@ sensor:
                 int16_t value = (int16_t)(x*100);
                 reportAttribute(ESP_ZB_ZCL_CLUSTER_ID_TEMP_MEASUREMENT, ESP_ZB_ZCL_ATTR_TEMP_MEASUREMENT_VALUE_ID, &value);
     humidity:
-      name: "Living Room Humidity"
+      name: "AHT20 Humidity"
       id: "hum"
       filters:
         - delta: 1
